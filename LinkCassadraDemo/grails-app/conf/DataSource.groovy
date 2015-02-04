@@ -19,7 +19,10 @@ grails {
 	cassandra {
 		contactPoints = "172.16.208.128"
 		port = 9042
-		keyspace.name = "demo"
+		keyspace {
+			name = "foo"
+			action = "create"
+		}
 	}
 }
 
