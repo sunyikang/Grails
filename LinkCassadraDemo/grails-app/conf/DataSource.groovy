@@ -19,10 +19,19 @@ grails {
 	cassandra {
 		contactPoints = "172.16.208.128"
 		port = 9042
+		dbCreate = "recreate" //the strategy to create cassandra tables and indexes for domain classes, default: "none"
+		
 		keyspace {
-			name = "foo"
-			action = "create"
-		}
+			name = "foo" //the name of the keyspace to use, default: the name of the application
+			action = "create" //whether to create a keyspace, default: no keyspace created
+			
+			//keyspace properties to set only if the plugin is to create the keyspace
+			durableWrites = false //default: false
+			//replicationStrategy = "SimpleStrategy" OR "NetworkTopologyStrategy" //default: "SimpleStrategy"
+			replicationFactor = 1 //default: 1
+			dataCenter = ["us-west":1, "eu-west":2] //if replicationStrategy is "NetworkTopologyStrategy",
+													//a map of data centre names and replication factors
+			}
 	}
 }
 
