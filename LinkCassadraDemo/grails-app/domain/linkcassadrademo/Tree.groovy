@@ -1,14 +1,15 @@
 package linkcassadrademo
 
-class Person {
-	
+class Tree {
+
 	String name
-	int age
+	int height
+	String color
 	String ToString() {
 		"${name}"
 	}
 	
-	//static hasMany = [trees: Tree]
+	//static belongTo = [owner: Person]
 	static mapWith = "cassandra"
     static constraints = {
     }
