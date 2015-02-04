@@ -19,11 +19,7 @@ grails {
 	cassandra {
 		contactPoints = "172.16.208.128"
 		port = 9042
-		
-		// yikang: here has a problem that when it is "recreate", the 2nd time run it, error pop up to say cannot create person table.
-		// changed to "none" can fix the problem.  same error if change to "create".
-		// A workaround is to delete all table and change to "recreate" and run, then change to "none" for the 2nd time running.
-		dbCreate = "none" //the strategy to create cassandra tables and indexes for domain classes, default: "none"
+		dbCreate = "recreate" //the strategy to create cassandra tables and indexes for domain classes, default: "none"
 		
 		keyspace {
 			name = "foo" //the name of the keyspace to use, default: the name of the application
