@@ -62,6 +62,9 @@ grails.project.dependency.resolution = {
         compile ':cache:1.1.8'
         compile ":asset-pipeline:1.9.9"
 
+		// yikang: need to compile cassandra, but comment the usage of hibernate.
+		compile ':cassandra:1.0.0-M01'
+		
         // plugins needed at runtime but not for compilation
         //
 		//

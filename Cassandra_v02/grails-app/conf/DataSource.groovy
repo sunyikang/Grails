@@ -14,12 +14,37 @@ hibernate {
     flush.mode = 'manual' // OSIV session flush mode outside of transactional context
 }
 
+// yikang: connect to cassandra
+grails {
+	cassandra {
+		contactPoints = "172.16.208.128"
+		port = 9042
+		
+		// yikang: meet problem to use "recreate", when the table has already existed in the cassandra database,
+		// need to use "none" or "recreate-drop-unused"
+		// Options: "none" / "create" / "recreate" / "recreate-drop-unused"
+		dbCreate = "recreate-drop-unused"
+		
+		keyspace {
+			name = "foo2" //the name of the keyspace to use, default: the name of the application
+			action = "create" //whether to create a keyspace, default: no keyspace created
+			
+			//keyspace properties to set only if the plugin is to create the keyspace
+			durableWrites = false //default: false
+			//replicationStrategy = "SimpleStrategy" OR "NetworkTopologyStrategy" //default: "SimpleStrategy"
+			replicationFactor = 1 //default: 1
+			dataCenter = ["us-west":1, "eu-west":2] //if replicationStrategy is "NetworkTopologyStrategy",
+													//a map of data centre names and replication factors
+			}
+	}
+}
+
 // environment specific settings
 environments {
     development {
         dataSource {
             dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
-            url = "jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
+            url = "jdbc:h2:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
         }
     }
     test {
