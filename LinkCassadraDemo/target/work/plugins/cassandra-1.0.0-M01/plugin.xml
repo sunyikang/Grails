@@ -1,7 +1,0 @@
-<plugin name='cassandra' version='1.0.0-M01' grailsVersion='2.3.2 &gt; *'>
-  <title>Cassandra GORM</title>
-  <description>A plugin that integrates the Cassandra datastore into Grails, providing a GORM API onto it</description>
-  <documentation>http://grails.github.io/grails-data-mapping/cassandra</documentation>
-  <type>CassandraGrailsPlugin</type>
-  <resources />
-</plugin>
