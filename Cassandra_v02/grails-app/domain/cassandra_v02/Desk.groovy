@@ -12,6 +12,7 @@ class Desk {
 	 * Here is an example of persisting an entity to both datastores:
 	 * 
 	 * */
+	String name
 	String brand
 	int height
 	

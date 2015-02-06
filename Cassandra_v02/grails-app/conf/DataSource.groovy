@@ -26,7 +26,7 @@ grails {
 		dbCreate = "recreate-drop-unused"   // "recreate-drop-unused"
 		
 		keyspace {
-			name = "foo2" //the name of the keyspace to use, default: the name of the application
+			name = "foo3" //the name of the keyspace to use, default: the name of the application
 			action = "create" //whether to create a keyspace, default: no keyspace created
 			
 			//keyspace properties to set only if the plugin is to create the keyspace
