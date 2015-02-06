@@ -23,7 +23,7 @@ grails {
 		// yikang: meet problem to use "recreate", when the table has already existed in the cassandra database,
 		// need to use "none" or "recreate-drop-unused"
 		// Options: "none" / "create" / "recreate" / "recreate-drop-unused"
-		dbCreate = "recreate-drop-unused"
+		dbCreate = "recreate-drop-unused"   // "recreate-drop-unused"
 		
 		keyspace {
 			name = "foo2" //the name of the keyspace to use, default: the name of the application
