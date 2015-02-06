@@ -1,2 +1,8 @@
 .metadata
 Server/*
+*.log
+
+/target/
+LinkCassadraDemo/target/stacktrace.log
+
+*.log
